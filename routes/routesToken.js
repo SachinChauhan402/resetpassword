@@ -3,7 +3,7 @@ const router = express.Router();
 const Token = require("../models/Token");
 
 // Route to handle token creation and saving
-router.post("http://localhost:80", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const { userId, token } = req.body;
 

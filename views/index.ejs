@@ -59,14 +59,15 @@
 
         if (JSON.parse(status) == "verified") {
             if (confirm("Password has been updated successfully. Do you want to login?")) {
-                window.location.href = "http://localhost:3000/";
+                window.location.href = "https://64abb891803f8132a8e0bbd3--stirring-chaja-e76270.netlify.app/";
             }
         }
     </script>
 </head>
 <body>
+    
     <div class="container">
-        <h3><%= email %></h3>
+        <h3><%= email%></h3>
         <form action="" method="post">
             <input type="password" name="password" id="password" placeholder="Enter New Password" required><br>
             <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm Password" required><br>

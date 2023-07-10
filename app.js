@@ -32,7 +32,7 @@ app.post("/forgot-password", async (req, res) => {
     });
 
     const link = `http://localhost:80/reset-password/${oldUser._id}/${token}`;
-
+console.log(link)
     
     const subject = "Password Reset"; // Replace with your desired subject
     const text = "Please reset your password using the link provided.";
@@ -47,13 +47,11 @@ app.post("/forgot-password", async (req, res) => {
   }
 });
 
-app.get("http://localhost:80/reset-password/:id/:token", async (req, res) => {
+app.get("/reset-password/:id/:token", async (req, res) => {
   const { id, token } = req.params;
   console.log(req.params)
-  const { password } = req.body;
-
- 
-    // Find user by ID
+  // const { password } = req.body;
+  
     const oldUser = await User.findOne({_id: id});
     if (!oldUser) {
     return res.status(400).send("User not exist!!!");
@@ -70,7 +68,7 @@ app.get("http://localhost:80/reset-password/:id/:token", async (req, res) => {
 })
 
 
-app.post("http://localhost:80/reset-password/:id/:token", async (req, res) => {
+app.post("/reset-password/:id/:token", async (req, res) => {
     const { id, token } = req.params;
     console.log(req.params)
     const { password } = req.body;
