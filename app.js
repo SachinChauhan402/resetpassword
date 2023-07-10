@@ -31,7 +31,7 @@ app.post("/forgot-password", async (req, res) => {
       expiresIn: "5m",
     });
 
-    const link = `http://localhost:80/reset-password/${oldUser._id}/${token}`;
+    const link = `https://resetpassword-fcsa.onrender.com/reset-password/${oldUser._id}/${token}`;
 console.log(link)
     
     const subject = "Password Reset"; // Replace with your desired subject
@@ -51,7 +51,7 @@ app.get("/reset-password/:id/:token", async (req, res) => {
   const { id, token } = req.params;
   console.log(req.params)
   // const { password } = req.body;
-  
+
     const oldUser = await User.findOne({_id: id});
     if (!oldUser) {
     return res.status(400).send("User not exist!!!");
