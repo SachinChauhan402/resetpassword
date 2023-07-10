@@ -7,7 +7,7 @@ const router = express.Router();
 const User = require("../models/User");
 const Token = require("../models/Token");
 
-router.post("/", async (req, res) => {
+router.post("http://localhost:80", async (req, res) => {
     console.log("sachin")
   try {
     const schema = Joi.object({ email: Joi.string().email().required() });
@@ -38,7 +38,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.post("/:userId/:token", async (req, res) => {
+router.post("http://localhost:80/:userId/:token", async (req, res) => {
    
   try {
     const schema = Joi.object({ password: Joi.string().required() });

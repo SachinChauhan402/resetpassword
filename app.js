@@ -47,7 +47,7 @@ app.post("/forgot-password", async (req, res) => {
   }
 });
 
-app.get("/reset-password/:id/:token", async (req, res) => {
+app.get("http://localhost:80/reset-password/:id/:token", async (req, res) => {
   const { id, token } = req.params;
   console.log(req.params)
   const { password } = req.body;
@@ -70,7 +70,7 @@ app.get("/reset-password/:id/:token", async (req, res) => {
 })
 
 
-app.post("/reset-password/:id/:token", async (req, res) => {
+app.post("http://localhost:80/reset-password/:id/:token", async (req, res) => {
     const { id, token } = req.params;
     console.log(req.params)
     const { password } = req.body;
